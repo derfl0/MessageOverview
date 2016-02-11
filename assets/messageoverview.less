@@ -1,0 +1,69 @@
+@list-width: 290px;
+
+div.message_overview {
+  height: 100%;
+  display: flex;
+  div.message_list_wrapper {
+    position: relative;
+    height: 100%;
+    flex: 0;
+    min-width: @list-width;
+    div.message_list {
+      border: 1px solid @dark-gray-color-40;
+      margin-right: 20px;
+      overflow-y: auto;
+      width: 100%;
+      position: absolute;
+      max-height: 100%;
+      box-sizing: border-box;
+      a {
+        display: block;
+        padding: 2px;
+        border-top: 1px solid @dark-gray-color-20;
+        &:first-child {
+          border-top: 0;
+        }
+        &.active {
+          background-color: @content-color-20;
+        }
+        p.author {
+          font-size: .9em;
+          margin: 0;
+        }
+        date {
+          color: @dark-gray-color-80;
+          position: absolute;
+          right: 2px;
+          font-size: .6em;
+        }
+      }
+    }
+  }
+  div.message_display_wrapper {
+    position: relative;
+    height: 100%;
+    flex: 1;
+    div.message_display {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      padding-left: 10px;
+      box-sizing: border-box;
+      overflow-y: auto;
+      article.message {
+        header {
+          background-color: @content-color-20;
+          padding: 2px;
+          date {
+            right: 4px;
+            position: absolute;
+          }
+        }
+        &:nth-child(n+3) {
+          border-top: 1px solid @dark-gray-color-20;
+          padding-top: 10px;
+        }
+      }
+    }
+  }
+}
