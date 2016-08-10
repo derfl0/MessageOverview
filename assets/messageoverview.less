@@ -50,20 +50,33 @@ div.message_overview {
       padding-left: 10px;
       box-sizing: border-box;
       overflow-y: auto;
-      article.message {
-        header {
-          background-color: @content-color-20;
-          padding: 2px;
-          date {
-            right: 4px;
-            position: absolute;
+      display: flex;
+      flex-direction: column;
+      .messages {
+        overflow-y: scroll;
+        article.message {
+          header {
+            background-color: @content-color-20;
+            padding: 2px;
+            position: relative;
+            date {
+              right: 4px;
+              position: absolute;
+            }
           }
-        }
-        &:nth-child(n+3) {
-          border-top: 1px solid @dark-gray-color-20;
-          padding-top: 10px;
+          &:nth-child(n+3) {
+            border-top: 1px solid @dark-gray-color-20;
+            padding-top: 10px;
+          }
         }
       }
     }
+  }
+}
+
+.message_answer {
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
   }
 }

@@ -135,16 +135,26 @@ div.message_overview div.message_display_wrapper div.message_display {
   padding-left: 10px;
   box-sizing: border-box;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
-div.message_overview div.message_display_wrapper div.message_display article.message header {
+div.message_overview div.message_display_wrapper div.message_display .messages {
+  overflow-y: scroll;
+}
+div.message_overview div.message_display_wrapper div.message_display .messages article.message header {
   background-color: #e7ebf1;
   padding: 2px;
+  position: relative;
 }
-div.message_overview div.message_display_wrapper div.message_display article.message header date {
+div.message_overview div.message_display_wrapper div.message_display .messages article.message header date {
   right: 4px;
   position: absolute;
 }
-div.message_overview div.message_display_wrapper div.message_display article.message:nth-child(n+3) {
+div.message_overview div.message_display_wrapper div.message_display .messages article.message:nth-child(n+3) {
   border-top: 1px solid #d8dadc;
   padding-top: 10px;
+}
+.message_answer textarea {
+  width: 100%;
+  box-sizing: border-box;
 }
